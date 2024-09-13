@@ -1,24 +1,27 @@
 ---
 import Icon from './Icon.astro';
 ---
+<!-- Assurez-vous d'inclure la bibliothèque Font Awesome dans votre projet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <section class="box skills">
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Full Stack</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Industry Leader</h2>
-		<p>Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor elit.</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Strategy-Minded</h2>
-		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
-	</div>
+    <div class="stack gap-2 lg:gap-4">
+        <i class="fas fa-database" style="color: var(--accent-regular); font-size: 2.5rem;"></i>
+        <h2>Data Analysis</h2>
+        <p>Expert in extracting actionable insights from complex datasets to drive strategic decision-making.</p>
+    </div>
+    <div class="stack gap-2 lg:gap-4">
+        <i class="fas fa-robot" style="color: var(--accent-regular); font-size: 2.5rem;"></i>
+        <h2>Machine Learning</h2>
+        <p>Proficient in developing and deploying machine learning models to solve real-world problems.</p>
+    </div>
+    <div class="stack gap-2 lg:gap-4">
+        <i class="fas fa-chart-line" style="color: var(--accent-regular); font-size: 2.5rem;"></i>
+        <h2>Reporting</h2>
+        <p>Skilled in generating comprehensive reports to visualize data and communicate findings effectively.</p>
+    </div>
 </section>
+
 
 <style>
 	.box {

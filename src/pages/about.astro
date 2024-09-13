@@ -5,56 +5,87 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout title="About | Chaima Baba" description="About Chaima Baba">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title="About Me"
+				tagline="Thanks for visiting. Here’s a bit about my background, education, and skills."
 			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
-				/>
+				
 			</Hero>
 
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						I am Chaima Baba, a data analyst with a master's degree in Data Science. My career began with a focus on full-stack development and Java programming, and has evolved into a specialization in data analysis and machine learning. My professional experiences include developing dynamic dashboards and predictive models that drive strategic decision-making.
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
+						Over the years, I have developed a keen ability to extract insights from complex datasets and deliver impactful solutions. My proficiency spans a wide range of technologies and tools, enabling me to tackle diverse data-related challenges with creativity and precision.
 					</p>
 					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						Fluent in Arabic, French, and English, I am well-equipped to work in multicultural environments and contribute effectively to international projects. I am passionate about using data to solve real-world problems and continuously seek new opportunities to grow and apply my skills.
 					</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
+    <h2 class="section-title">Education</h2>
+    <div class="content">
+        <p><strong>Master’s Degree in Data Science</strong><br>
+        Faculty of Sciences Semlalia, UCA, 2024</p>
+
+        <p><strong>Professional Bachelor's Degree in Software Engineering</strong><br>
+        Higher School of Technology, Essaouira, 2022</p>
+
+        <p><strong>University Diploma of Technology in Computer Engineering</strong><br>
+        Higher School of Technology, Essaouira, 2021</p>
+
+        <p><strong>Scientific Baccalaureate</strong><br>
+        Lycée Nawras Mogador, 2019</p>
+    </div>
+</section>
+
 			<section>
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title">Professional Experience</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<p>
+						<strong>Data Analyst Intern, Growth Attack | Marrakech</strong> - February 2024 - June 2024
+						<br>
+						Developed a dynamic dashboard with Power BI for financial data analysis and visualization. 
+						<br>
+						Conducted predictive analysis to identify churn factors and forecast attrition rates using machine learning tools. 
+						<br>
+						Estimated future revenue by forecasting signed contracts using advanced machine learning techniques.
+					</p>
+					<p>
+						<strong>Full-stack Web Developer, Ajicode | Agadir</strong> - April 2022 - June 2022
+						<br>
+						Developed a platform for managing employees, interns, trainers, trainings, and candidates at Moroccan institutes using VueJS 3, Laravel 8, and Tailwind CSS.
+					</p>
+					<p>
+						<strong>Java Developer, Chamber of Commerce, Industry, and Services, Essaouira Branch | Essaouira</strong> - April 2021 - June 2021
+						<br>
+						Created a desktop application for managing the reception of chamber members using Oracle Database, CSS, and Java.
+					</p>
 				</div>
 			</section>
+			
+			<section>
+    <h2 class="section-title">Skills</h2>
+    <div class="content">
+        <ul class="skills-list">
+            <li><strong>Data Analysis:</strong> Expertise in extracting actionable insights from complex datasets.</li>
+            <li><strong>Machine Learning:</strong> Proficient in developing and deploying machine learning models.</li>
+            <li><strong>Full-Stack Development:</strong> Experienced in web development with HTML, CSS, PHP, JavaScript, ReactJS, NodeJS, AJAX, Laravel 8, VueJS 3, and Flask.</li>
+            <li><strong>Big Data Technologies:</strong> Hadoop, Spark, MapReduce.</li>
+            <li><strong>Business Intelligence:</strong> ETL, Power BI, Pentaho, Tableau, Semarchy xDI, Talend.</li>
+            <li><strong>Programming Languages:</strong> C, C++, Java, PLSQL, J2EE, Python, R.</li>
+            <li><strong>Database Management:</strong> SQL, Oracle, MYSQL, Microsoft Access, MongoDB, NoSQL.</li>
+        </ul>
+    </div>
+</section>
+
 		</main>
 
 		<ContactCTA />
@@ -116,5 +147,37 @@ import Hero from '../components/Hero.astro';
 			display: contents;
 			font-size: var(--text-lg);
 		}
+		.content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--gray-0);
+    margin-bottom: 0.25rem;
+}
+
+.content br {
+    margin-bottom: 0.5rem;
+}
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.skills-list strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--gray-0);
+}
+
 	}
 </style>

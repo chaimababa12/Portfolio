@@ -1,35 +1,134 @@
 ---
-title: Markdown Mystery Tour
-publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+title: Offensive Content  and Dialect Detection
+publishDate: 2024-01-01
+img: /assets/dialect.jpg
+img_alt: Overview of the NLP project
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  Developed NLP models to tackle online content moderation challenges, focusing on detecting offensive content and recognizing dialects within Arabic language texts. This project aims to enhance the quality of online interactions by classifying comments based on offensiveness and dialect.
+
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - NLP
+  - Machine Learning
+  - Data Processing
 ---
 
-## Level-two heading
+## Project Overview
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+### Context and Objectives
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+With the rise of social media and online platforms, the way people interact and communicate globally has transformed. This connectivity has led to the creation of virtual dialogue spaces that transcend geographical and cultural boundaries. However, this ease of expression brings challenges such as managing online comments and maintaining a respectful digital environment.
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+This project focuses on the intersection of technology and online communication by designing and implementing NLP models to address two crucial aspects:
 
-### Level-three heading
+- **Detection of Offensiveness**: Developing a robust NLP model to classify comments based on their level of offensiveness, aiming to proactively moderate harmful content and reduce the risks associated with online hate speech.
+- **Dialect Recognition**: Creating a system for effective dialect recognition to enrich contextual understanding of messages, facilitating more precise and respectful communication on digital platforms, with a particular emphasis on the Arabic language.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+### Dialect Detection
 
-### Level-three heading
+#### Dataset
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+- **Training Set**: 12,548 samples
+- **Test Set**: 3,000 samples
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+**Dialect Classes**:
 
-#### Level-four heading
+- **Modern Standard Arabic (MSA)**: Standardized Arabic used in media, education, and official documents.
+- **Gulf Arabic (Gulf)**: Dialect used in the Gulf region including Saudi Arabia, Bahrain, UAE, Kuwait, Oman, and Qatar.
+- **Egyptian Arabic (Egypt)**: Dialect specific to Egypt.
+- **Levantine Arabic (Levant)**: Dialect used in Lebanon, Syria, Jordan, Palestine, and Israel.
+- **Maghrebi Arabic (Maghreb)**: Dialect used in the Maghreb region including Morocco, Algeria, Tunisia, and Libya.
 
-- We noted this
-- And also this other point
+**Dataset Distribution**:
+
+- **Training Set**: Includes distribution curves for different dialects.
+- **Test Set**: Includes distribution curves for different dialects.
+
+#### Data Processing and Preparation
+
+- **Initial Dataset**:
+
+  - **Cleaning**: Removed unnecessary column `dialect_encoded`.
+  - **Text Preprocessing**: Cleaned tweet texts by removing emojis and retaining only Arabic words.
+
+- **Preprocessing with ArabERT**: Utilized the ArabERT model to tokenize tweets and obtain phrase embeddings.
+
+#### Model Implementation
+
+- **Model Training**:
+
+  - Trained using ArabERT-generated embeddings and corresponding labels. Logistic Regression was chosen for its simplicity and effectiveness in classification.
+
+- **Model Evaluation**:
+  - Evaluated on a validation set with an accuracy of 69%. Further detailed analysis may be required for each specific dialect class.
+
+#### Results
+
+- **Accuracy**: 69%
+
+### Offensive Content Detection
+
+#### Dataset
+
+- **Source**: Arabic Offensive Comments dataset from various social media platforms (Facebook, Twitter, YouTube).
+- **Classes**: Offensive and Non-Offensive comments.
+
+#### Data Exploration
+
+- **Non-Offensive**: 730 samples
+- **Offensive**: 440 samples
+
+#### Data Processing and Preparation
+
+- **Class Renaming**: Simplified the classification by renaming classes in the `Class` column (e.g., 'abusive' to 'offensive').
+
+- **Tokenizer and ArabERT Model**: Utilized the pre-trained ArabERT model for tokenization and embedding generation.
+
+#### Model Implementation
+
+- **Logistic Regression Model**:
+  - Trained with training embeddings and corresponding offensiveness labels.
+
+#### Results
+
+- **Accuracy**: 78.72%
+
+### Enhanced Offensiveness Detection with Dialect Enrichment
+
+- **Objective**: Improve the contextual understanding of offensive comments by incorporating dialect recognition to enhance the overall performance of the detection system.
+- **Approach**: Leveraged the previously trained dialect model to identify dialects and refine the offensiveness detection.
+
+<div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); justify-content: center; align-items: center;">
+  <span style="position: absolute; top: 10px; right: 20px; font-size: 2rem; color: white; cursor: pointer;" onclick="closeModal()">&times;</span>
+  <button style="position: absolute; left: 10px; top: 50%; font-size: 2rem; color: white; background: none; border: none; cursor: pointer;" onclick="prevImage()">&lt;</button>
+  <img id="modal-img" src="" alt="Expanded View" style="max-width: 90%; max-height: 90%;" />
+  <button style="position: absolute; right: 10px; top: 50%; font-size: 2rem; color: white; background: none; border: none; cursor: pointer;" onclick="nextImage()">&gt;</button>
+</div>
+
+<script>
+  const images = [
+    '/assets/nlp-screenshot1.png',
+    '/assets/nlp-screenshot2.png'
+  ];
+
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    document.getElementById('modal-img').src = images[currentIndex];
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+    document.getElementById('modal-img').src = images[currentIndex];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+    document.getElementById('modal-img').src = images[currentIndex];
+  }
+</script>
